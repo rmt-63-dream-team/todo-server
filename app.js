@@ -14,3 +14,9 @@ app.listen(port, () => {
 });
 
 module.exports = app;
+
+
+// --- development
+//  |-- feat-user-management --> nambahin model, bcrypt hash, jwt
+//.   |--- feat-login
+//.   |--- feat-register
