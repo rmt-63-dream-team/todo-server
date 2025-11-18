@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const UserController = require("./controllers/UserController");
 const app = express();
@@ -11,6 +12,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/register", UserController.register);
+app.post("/login", require("./controllers/UserController").login);
 
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
