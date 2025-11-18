@@ -1,4 +1,5 @@
 const express = require("express");
+const UserController = require("./controllers/UserController");
 const app = express();
 const port = 3000;
 
@@ -9,12 +10,13 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+app.post("/register", UserController.register);
+
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
 
 module.exports = app;
-
 
 // --- development
 //  |-- feat-user-management --> nambahin model, bcrypt hash, jwt
